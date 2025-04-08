@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎬 Random Movie Generator</title>
+  <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+  <h1>🎬 IM-2 Movie Generator</h1>
+
+    <p>by nils & len</p>
+  <!-- Genre selector and button -->
+  <div>
+    <select id="genreSelect">
+      <option value="all">🎲 Any Genre</option>
+      <option value="action">🔥 Action</option>
+      <option value="comedy">😂 Comedy</option>
+      <option value="drama">🎭 Drama</option>
+      <option value="horror">👻 Horror</option>
+      <option value="sci-fi">🚀 Sci-Fi</option>
+      <option value="romance">❤️ Romance</option>
+      <option value="thriller">😱 Thriller</option>
+      <option value="fantasy">🧙 Fantasy</option>
+    </select>
+    <button onclick="getRandomMovie()">Get Random Movie</button>
+  </div>
+
+  <!-- Placeholder for movie details -->
+  <div id="movie"></div>
+  <script src="script.js"></script>
+  
+
+</body>
+</html>
