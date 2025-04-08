@@ -1,8 +1,8 @@
 
-    // 🔑 Your personal OMDb API key
+    //  Your personal OMDb API key
     const apiKey = "51f2c073";
 
-    // 🧠 Pre-defined keyword lists to simulate genre filtering
+    //  Pre-defined keyword lists to simulate genre filtering
     const genreKeywords = {
       "all": ["life", "story", "dream", "night", "lost", "world", "secret", "mission", "power"],
       "action": ["war", "battle", "fight", "explosion", "chase", "guns", "revenge"],
@@ -15,58 +15,58 @@
       "fantasy": ["magic", "dragon", "kingdom", "sword", "legend", "elf"]
     };
 
-    // 🎥 Main function to fetch and display a random movie
+    //  Main function to fetch and display a random movie
     async function getRandomMovie() {
-      // 📌 Get the selected genre from the dropdown
+      //  Get the selected genre from the dropdown
       const genre = document.getElementById("genreSelect").value;
 
-      // 🎯 Get a random keyword for the selected genre
+      //  Get a random keyword for the selected genre
       const keywordList = genreKeywords[genre] || genreKeywords["all"];
       const keyword = keywordList[Math.floor(Math.random() * keywordList.length)];
 
-      // 🌐 Create a search URL for the OMDb API using the keyword
+      //  Create a search URL for the OMDb API using the keyword
       const searchUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${keyword}&type=movie`;
 
       try {
-        // 🚀 Fetch movies using the keyword
+        //  Fetch movies using the keyword
         const res = await fetch(searchUrl);
         const data = await res.json();
 
-        // ✅ If results are found
+        //  If results are found
         if (data.Search && data.Search.length > 0) {
-          // 🎲 Pick one random movie from the results
+          //  Pick one random movie from the results
           const randomIndex = Math.floor(Math.random() * data.Search.length);
           const movieId = data.Search[randomIndex].imdbID;
 
-          // 📖 Fetch full movie details using imdbID
+          //  Fetch full movie details using imdbID
           const movieRes = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${movieId}&plot=short`);
           const movieData = await movieRes.json();
 
-          // 🎯 Check if the selected genre is in the actual movie’s genre field
+          //  Check if the selected genre is in the actual movie’s genre field
           if (genre === "all" || movieData.Genre.toLowerCase().includes(genre)) {
-            // ✅ If genre matches, display it
+            //  If genre matches, display it
             displayMovie(movieData);
           } else {
-            // 🔁 Otherwise, retry and get a new one
+            //  Otherwise, retry and get a new one
             getRandomMovie();
           }
         } else {
-          // ❌ No results found
+          //  No results found
           document.getElementById("movie").innerHTML = "<p>No movie found. Try again!</p>";
         }
       } catch (error) {
-        // 🚨 Catch any fetch or parsing errors
+        //  Catch any fetch or parsing errors
         document.getElementById("movie").innerHTML = "<p>Error fetching movie data.</p>";
         console.error(error);
       }
     }
 
-    // 📺 Function to insert movie details into the HTML
+    //  Function to insert movie details into the HTML
     function displayMovie(movie) {
-      // 🖼️ Fallback image if poster is missing
+      //  Fallback image if poster is missing
       const poster = movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/400x600?text=No+Image";
 
-      // 🧱 Build HTML structure for movie card
+      //  Build HTML structure for movie card
       const movieDiv = document.getElementById("movie");
       movieDiv.innerHTML = `
         <img src="${poster}" alt="${movie.Title} poster"/>
