@@ -5,31 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🎬 Random Movie Generator</title>
   <link rel="stylesheet" href="style.css">
-    
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-  <h1>🎬 IM-2 Movie Generator</h1>
+  <h1>Moodflix</h1>
 
-    <p>by nils & len</p>
+    <p>Finde den perfekten Film für deine Stimmung</p>
   <!-- Genre selector and button -->
   <div>
     <select id="genreSelect">
-      <option value="all">🎲 Any Genre</option>
-      <option value="action">🔥 Action</option>
-      <option value="comedy">😂 Comedy</option>
-      <option value="drama">🎭 Drama</option>
-      <option value="horror">👻 Horror</option>
-      <option value="sci-fi">🚀 Sci-Fi</option>
-      <option value="romance">❤️ Romance</option>
-      <option value="thriller">😱 Thriller</option>
-      <option value="fantasy">🧙 Fantasy</option>
+      <option value="all">🎲 Gelichgültig</option>
+      <option value="action">🔥 Spannung</option>
+      <option value="comedy">😂 Lachflash</option>
+      <option value="drama">🎭 Mitfühlen</option>
+      <option value="horror">👻 Gruseln</option>
+      <option value="sci-fi">🚀 Träumen</option>
+      <option value="romance">❤️ Verliebt</option>
+      <option value="thriller">😱 Adrenalinkick</option>
+      <option value="fantasy">🧙 Abtauchen</option>
     </select>
-    <button onclick="getRandomMovie()">Get Random Movie</button>
+    
   </div>
 
   <!-- Placeholder for movie details -->
   <div id="movie"></div>
+
+  <button onclick="getRandomMovie()">Film Vorschlag Generieren</button>
+
   <script src="script.js"></script>
   
 

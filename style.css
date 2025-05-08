@@ -1,50 +1,91 @@
 /* (CSS is unchanged – stylish as before) */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #141e30, #243b55);
+    background: linear-gradient( #8300B7, #000000);
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 5em;
     margin-bottom: 20px;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* shadow on the text */
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2)); /* drop shadow on the whole element */
+    font-family: 'Montserrat Alternates', sans-serif;
   }
 
-  select, button {
-    padding: 12px 20px;
-    font-size: 16px;
-    margin: 10px;
-    border: none;
-    border-radius: 30px;
-    outline: none;
-    transition: 0.3s ease;
-  }
+
 
   select {
-    background: #eee;
-    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  
+    background-color: #111;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  
+    padding: 12px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    width: 220px;
+  
+    background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+  }
+  
+  /* Custom option styling (not all browsers fully support) */
+  select option {
+    background-color: #000;
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Styling the selected option (highlighted) — not all browsers let you fully control this */
+  select option:checked {
+    background-color: #8e2de2;
+    color: white;
   }
 
   button {
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    background: #8e2de2; /* purple like in the screenshot */
     color: white;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 14px 40px;
+    margin-top: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
   }
 
   button:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
 
   #movie {
     margin-top: 40px;
     display: inline-block;
-    max-width: 400px;
+    max-width: 60%;
     width: 90%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -65,13 +106,14 @@ body {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    margin-bottom: 15px;
     animation: fadeIn 0.8s ease;
   }
 
   #movie h2 {
     margin: 0 0 10px;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 22px;
+    color: #ffffff;
   }
 
   #movie p {
@@ -82,17 +124,40 @@ body {
 
   .label {
     font-weight: bold;
-    color: #ffcccb;
+    color: #DF97FC;
+  }
+/* Movie layout enhancement */
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.poster-container img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+.info-container {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .movie-container {
+    flex-direction: row;
+    align-items: center;
   }
 
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 2em;
-    }
-
-    button, select {
-      font-size: 14px;
-      padding: 10px 16px;
-    }
+  .poster-container {
+    flex-shrink: 0;
   }
-  /* ... same styles as in the last version ... */
+
+  .info-container {
+    padding-left: 30px;
+  }
+}

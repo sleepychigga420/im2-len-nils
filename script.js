@@ -1,5 +1,4 @@
-
-    //  Your personal OMDb API key
+//  Your personal OMDb API key
     const apiKey = "51f2c073";
 
     //  Pre-defined keyword lists to simulate genre filtering
@@ -69,11 +68,17 @@
       //  Build HTML structure for movie card
       const movieDiv = document.getElementById("movie");
       movieDiv.innerHTML = `
-        <img src="${poster}" alt="${movie.Title} poster"/>
+    <div class="movie-container">
+     <div class="poster-container">
+       <img src="${poster}" alt="${movie.Title} poster"/>
+      </div>
+      <div class="info-container">
         <h2>${movie.Title} (${movie.Year})</h2>
         <p><span class="label">Director:</span> ${movie.Director}</p>
-        <p><span class="label">IMDb Rating:</span> ${movie.imdbRating}</p>
+        <p><span class="label">Rating:</span> ${movie.imdbRating}</p>
         <p><span class="label">Genre:</span> ${movie.Genre}</p>
         <p><span class="label">Plot:</span> ${movie.Plot}</p>
-      `;
+      </div>
+    </div>
+`;
     }
