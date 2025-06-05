@@ -1,3 +1,33 @@
+
+  const genreSelect = document.getElementById("genreSelect");
+  const backgroundContainer = document.getElementById("backgroundContainer");
+
+  const backgroundImages = {
+    "all": "images/all.png",
+    "action": "images/action.png",
+    "comedy": "images/comedy.png",
+    "drama": "images/drama.png",
+    "horror": "images/horror.png",
+    "sci-fi": "images/sci-fi.png",
+    "romance": "images/romance.png",
+    "thriller": "images/thriller.png",
+    "fantasy": "images/abtauchen.png"
+  };
+
+  function updateBackground() {
+    const selectedGenre = genreSelect.value;
+    const imageUrl = backgroundImages[selectedGenre];
+    backgroundContainer.style.backgroundImage = `url('${imageUrl}')`;
+  }
+
+  genreSelect.addEventListener("change", updateBackground);
+
+  // Initial load
+  window.addEventListener("DOMContentLoaded", updateBackground);
+
+
+
+
 //  Your personal OMDb API key
     const apiKey = "51f2c073";
 
