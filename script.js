@@ -1,17 +1,16 @@
-
   const genreSelect = document.getElementById("genreSelect");
   const backgroundContainer = document.getElementById("backgroundContainer");
 
   const backgroundImages = {
     "all": "images/all.png",
-    "action": "images/action.png",
-    "comedy": "images/comedy.png",
-    "drama": "images/drama.png",
-    "horror": "images/horror.png",
-    "sci-fi": "images/sci-fi.png",
-    "romance": "images/romance.png",
-    "thriller": "images/thriller.png",
-    "fantasy": "images/abtauchen.png"
+    "action": "images2/spannung.png",
+    "comedy": "images2/Lachflash.png",
+    "drama": "images2/Mitfühlen.png",
+    "horror": "images2/gruseln.png",
+    "sci-fi": "images2/träumen.png",
+    "romance": "images2/verliebt.png",
+    "thriller": "images2/adrenalinkick.png",
+    "fantasy": "images2/abtauchen.png"
   };
 
   function updateBackground() {
